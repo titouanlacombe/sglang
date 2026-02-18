@@ -2,7 +2,7 @@ name: sglang
 
 services:
   app:
-    image: vlmsysorg/sglang:latest-cu130-runtime
+    image: lmsysorg/sglang:latest-cu130-runtime
     restart: unless-stopped
     ipc: host  # Required for efficient memory sharing in multi-process inference
     entrypoint: python3 -m sglang.launch_server --config /config.yml
