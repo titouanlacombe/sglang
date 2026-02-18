@@ -5,4 +5,4 @@ served-model-name: Nanbeige4.1-3B
 context-length: 8000
 kv-cache-dtype: fp8_e4m3
 enable-dynamic-chunking: true
-# mem-fraction-static:
+mem-fraction-static: 0.9
