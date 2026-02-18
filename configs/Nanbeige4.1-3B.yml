@@ -1,0 +1,8 @@
+model-path: Nanbeige/Nanbeige4.1-3B
+served-model-name: Nanbeige4.1-3B
+# reasoning-parser:
+# tool-call-parser:
+context-length: 8k
+kv-cache-dtype: fp8_e4m3
+enable-dynamic-chunking: true
+# mem-fraction-static:

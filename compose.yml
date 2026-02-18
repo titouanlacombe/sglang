@@ -1,0 +1,20 @@
+name: sglang
+
+services:
+  app:
+    image: vlmsysorg/sglang:latest-cu130-runtime
+    restart: unless-stopped
+    ipc: host  # Required for efficient memory sharing in multi-process inference
+    entrypoint: python3 -m sglang.launch_server --config /config.yml
+    ports:
+      - $APP_PORT:8000
+    volumes:
+      - ./data:/root/.cache/huggingface
+      - ./configs/$CONFIG.yml:/config.yml
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
